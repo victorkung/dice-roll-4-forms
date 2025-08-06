@@ -4,8 +4,8 @@ class DiceController < ApplicationController
   end
 
   def roll_flexible
-    @num_dice = params.fetch("number_of_dice").to_i
-    @sides = params.fetch("how_many_sides").to_i
+    @num_dice = params.fetch("dice").to_i
+    @sides = params.fetch("sides").to_i
 
     @rolls = []
 
@@ -14,7 +14,7 @@ class DiceController < ApplicationController
       @rolls.push(dice)
     end
 
-    render({ :template => "dice_templates/result_flexible" })
+    render({ :template => "dice_templates/roll_flexible" })
   end
 
 end
